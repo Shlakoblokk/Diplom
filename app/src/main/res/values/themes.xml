@@ -1,0 +1,5 @@
+<resources>
+    <style  name="Theme.Diplom" parent="Theme.Material3.Light.NoActionBar">
+
+    </style>
+</resources>
