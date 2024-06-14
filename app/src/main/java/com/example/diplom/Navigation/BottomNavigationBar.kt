@@ -32,7 +32,6 @@ fun BottomNavigationBar(navController: NavHostController) {
 
 
     NavigationBar(
-        containerColor = colorScheme.primary
     ) {
         items.forEachIndexed { index, item ->
             NavigationBarItem(
@@ -41,29 +40,28 @@ fun BottomNavigationBar(navController: NavHostController) {
                         0 -> Icon(
                             Icons.Filled.Book,
                             contentDescription = item,
-                            tint = Color(0xFF191C2E)
+
                         )
 
                         1 -> Icon(
                             Icons.Filled.Computer,
                             contentDescription = item,
-                            tint = colorScheme.primary
                         )
 
                         2 -> Icon(
                             Icons.Filled.Person,
                             contentDescription = item,
-                            tint = Color(0xFF191C2E)
+                            
                         )
 
                         else -> Icon(
                             Icons.Filled.Favorite,
                             contentDescription = item,
-                            tint = Color(0xFF191C2E)
+
                         )
                     }
                 },
-                label = { Text(item, color = Color(0xFF191C2E)) },
+                label = { Text(item) },
                 selected = currentRoute == routes[index],
                 onClick = {
                     if (currentRoute != routes[index]) {
@@ -74,12 +72,6 @@ fun BottomNavigationBar(navController: NavHostController) {
                         }
                     }
                 },
-                colors = NavigationBarItemDefaults.colors(
-                    selectedIconColor = colorScheme.onPrimary,
-                    unselectedIconColor = colorScheme.onPrimary,
-                    selectedTextColor = colorScheme.onPrimary,
-                    unselectedTextColor = colorScheme.onPrimary
-                )
             )
         }
     }

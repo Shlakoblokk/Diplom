@@ -217,7 +217,7 @@ fun CardFixedAssets(navController: NavHostController) {
                             if (isExpanded) {
                                 Column {
                                     Text(
-                                        text = "изменено потому что так надо вот да хе хе изменено потому что так надо изменено потому что так надо",
+                                        text = "изменено потому что",
                                         fontSize = 20.sp,
                                         textAlign = TextAlign.Start,
 
@@ -252,7 +252,7 @@ fun CardFixedAssets(navController: NavHostController) {
                                                 .verticalScroll(rememberScrollState())
                                         ) {
                                             Text(
-                                                text = "изменено в связи с такой то причиной изменено в связи с такой то причиной изменено в связи с такой то причиной изменено в связи с такой то причиной изменено в связи с такой то причиной изменено в связи с такой то причиной",
+                                                text = "изменено в связи с такой то причиной",
                                                 fontSize = 20.sp,
                                                 textAlign = TextAlign.Start
                                             )

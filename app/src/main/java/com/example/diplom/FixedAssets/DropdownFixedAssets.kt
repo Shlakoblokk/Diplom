@@ -3,6 +3,9 @@ package com.example.diplom.FixedAssets
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.*
 import androidx.compose.foundation.shape.RoundedCornerShape
+import androidx.compose.material.icons.Icons
+import androidx.compose.material.icons.filled.ExpandLess
+import androidx.compose.material.icons.filled.ExpandMore
 import androidx.compose.material3.*
 import androidx.compose.runtime.*
 import androidx.compose.ui.Alignment
@@ -12,9 +15,13 @@ import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import androidx.compose.ui.tooling.preview.Preview
+import com.example.diplom.Elements.Calendar
 
 @Composable
 fun DropdownFixedAssets(selectedOptions: MutableState<Map<String, List<String>>>) {
+
+    var isExpanded by remember { mutableStateOf(false) }
+
     val dropdownData = listOf(
         "Группа" to listOf("Компьютерная техника", "Принтеры и МФУ", "Картриджи"),
         "Аудитория" to listOf("4324", "3927", "2452"),
@@ -56,11 +63,27 @@ fun DropdownFixedAssets(selectedOptions: MutableState<Map<String, List<String>>>
                             containerColor = Color.White
                         )
                     ) {
-                        Text(
-                            text = category,
-                            fontSize = 20.sp
-                        )
+                        Row(
+                            modifier = Modifier.fillMaxWidth(),
+                            horizontalArrangement = Arrangement.SpaceBetween, // Распределяет элементы по сторонам
+                            verticalAlignment = Alignment.CenterVertically // Выравнивает элементы по вертикали
+                        ) {
+                            Text(
+                                text = category,
+                                fontSize = 20.sp
+                            )
+                            IconButton(
+                                onClick = { isExpanded = !isExpanded }
+                            ) {
+                                Icon(
+                                    imageVector = if (isExpanded) Icons.Filled.ExpandLess else Icons.Filled.ExpandMore,
+                                    contentDescription = if (isExpanded) "Collapse" else "Expand"
+                                )
+                            }
+                        }
                     }
+
+
                     if (isOpen[category] == true) {
                         options.forEach { item ->
                             val isChecked = selectedOptions.value[category]?.contains(item) ?: false
@@ -92,6 +115,7 @@ fun DropdownFixedAssets(selectedOptions: MutableState<Map<String, List<String>>>
             }
             Spacer(modifier = Modifier.height(10.dp))
         }
+        Calendar()
     }
 }
 

@@ -14,7 +14,10 @@ class MainActivity : ComponentActivity() {
         super.onCreate(savedInstanceState)
 
         setContent {
-            DiplomTheme {
+            DiplomTheme(
+                darkTheme = false,
+                dynamicColor = false
+            ) {
                 NavGraph()
 
 
