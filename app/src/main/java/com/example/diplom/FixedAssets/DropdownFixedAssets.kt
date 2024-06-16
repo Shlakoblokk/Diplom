@@ -52,7 +52,7 @@ fun DropdownFixedAssets(selectedOptions: MutableState<Map<String, List<String>>>
                 modifier = Modifier.fillMaxWidth()
             ) {
                 Column(
-                    modifier = Modifier.background(Color.White) // Установка белого фона для Card
+                    modifier = Modifier.background(Color.White)
                 ) {
                     Button(
                         onClick = { toggleDropdown(category) },
