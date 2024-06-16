@@ -65,8 +65,8 @@ fun DropdownFixedAssets(selectedOptions: MutableState<Map<String, List<String>>>
                     ) {
                         Row(
                             modifier = Modifier.fillMaxWidth(),
-                            horizontalArrangement = Arrangement.SpaceBetween, // Распределяет элементы по сторонам
-                            verticalAlignment = Alignment.CenterVertically // Выравнивает элементы по вертикали
+                            horizontalArrangement = Arrangement.SpaceBetween,
+                            verticalAlignment = Alignment.CenterVertically
                         ) {
                             Text(
                                 text = category,
@@ -91,7 +91,7 @@ fun DropdownFixedAssets(selectedOptions: MutableState<Map<String, List<String>>>
                                 modifier = Modifier
                                     .fillMaxWidth()
                                     .padding(horizontal = 10.dp)
-                                    .background(Color.White), // Установка белого фона для каждого элемента
+                                    .background(Color.White),
 
                             ) {
                                 Checkbox(
